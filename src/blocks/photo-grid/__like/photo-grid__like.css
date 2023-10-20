@@ -1,0 +1,17 @@
+.photo-grid__like {
+    background: url(../../../images/Vector-heart.svg);
+    display: inline-block;
+    min-width: 22px;
+    height: 19px;
+    background-position: center;
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    font-size: 16px;
+    padding: 0;
+    border: none;
+}
+
+.photo-grid__like:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="pages/index.css"> -->
+    <title>Mesto Russia</title>
+</head>
+
+<body class="page">
+    <div class="page__container">
+        <header class="header">
+            <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип Место">
+        </header>
+    </div>
+
+    <main>
+        <section class="profile">
+            <img class="profile__image" src="<%=require('./images/image.jpg')%>" alt="Аватар">
+            <div class="profile__content">
+                <div class="profile__info">
+                    <div class="profile__item">
+                        <h1 class="profile__username">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-button" type="button"></button>
+                    </div>
+                    <p class="profile__description">Исследователь океана</p>
+                </div>
+                <button class="profile__add-button" type="button"></button>
+            </div>
+        </section>
+
+        <section class="photo-grid" aria-label="Фото">
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__author">© 2023 Polina Tsushko</p>
+    </footer>
+
+
+    <div class="popup popup-edit">
+        <button class="popup__close-button .popup__close-button_info close-button-all"></button>
+        <div class="popup__container popup__container-edit">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form popup__form_profile" name="форма">
+                <fieldset class="popup__fieldset">
+                    <input 
+                    class="popup__input popup__input-username"
+                    type="text" 
+                    name="name"
+                    placeholder="Имя пользователя" 
+                    minlength="2" 
+                    maxlength="40" 
+                    id="username"
+                    required>
+                    <span id="error-username" class="popup__error"></span>
+                    <input 
+                    class="popup__input popup__input-desription" 
+                    type="text" 
+                    name="about"
+                    placeholder="Информация" 
+                    minlength="2" 
+                    maxlength="200" 
+                    id="about"
+                    required>
+                    <span id="error-about" class="popup__error"></span>
+                </fieldset>
+                
+                <button class="popup__save-button close-button-all" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup popup-add">
+        <button class="popup__close-button .popup__close-button_img close-button-all"></button>
+        <div class="popup__container popup__container-add">
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup__form_card" name="форма">
+                <fieldset class="popup__fieldset">
+                    <input class="popup__input popup__input-title" 
+                    type="text" 
+                    name="cardname" 
+                    placeholder="Название"
+                    minlength="2" 
+                    maxlength="30"
+                    id="card-name"
+                    required>
+                    <span id="error-card-name" class="popup__error"></span>
+                    <input class="popup__input popup__input-link"
+                    type="url" 
+                    name="card-url"
+                    placeholder="Ссылка на картинку"
+                    id="card-url"
+                    required>
+                    <span id="error-card-url" class="popup__error popup__error_visible"></span>
+                </fieldset>
+                <button class="popup__save-button close-button-all" type="submit">Создать</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup popup_picture popup__picture-background">
+        <div class="popup__container_place_image">
+            <button class="popup__close-button close-button-all" type="button"></button>
+            <img src="." alt="." class="popup__image">
+            <p class="popup__img-title"></p>
+        </div>
+    </div>
+
+
+    <template id="template-card">
+        <li class="element">
+            <button class="element__delete" type="button" aria-label="Кнопка удаления"></button>
+            <img class="element__image" src="" alt="">
+            <div class="element__option">
+                <h2 class="element__title"></h2>
+                <button class="element__like" type="button" aria-label="Кнопка лайка"></button>
+            </div>
+        </li>
+    </template>
+
+    <!-- <script type="module" src="./index.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+.photo-grid__like_active {
+    background-image: url('../../../../images/Union.svg');
+}
+
+.photo-grid__like_active:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
